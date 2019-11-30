@@ -38,7 +38,7 @@ class Solution:
             p = p.next
         if carry_digit:
             p.next = ListNode(carry_digit)
-            
+
         return dummy.next
 
 
