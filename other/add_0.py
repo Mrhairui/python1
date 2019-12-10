@@ -11,7 +11,7 @@ class Solution:
             for j in range(i+1, n-1):
                 res = -(nums[i] + nums[j] )
                 for t in range(j+1, n):
-                    if nums[t] == res:
+                    if nums[t] == res :
                         a.append([nums[i], nums[j], nums[t]])
         return a
 
