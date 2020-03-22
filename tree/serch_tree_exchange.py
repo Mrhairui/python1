@@ -11,21 +11,28 @@ class Solution:
             a = 0
             if root.left:
                 find_Serach(root.left)
-            a = a+3
-            if self.pre and self.pre.val > root.val:
-                print(4)
+            if self.pre:
+                if self.a == None and self.pre.val > root.val:
+                    self.a = self.pre
+                if self.a and self.pre.val > root.val:
+                    self.b = root
+
             self.pre = root
-            find_Serach(root.right)
+            if root.right:
+                find_Serach(root.right)
 
         self.pre = None
+        self.a = None
+        self.b = None
         find_Serach(root)
+        self.a.val, self.b.val = self.b.val, self.a.val
 
 if __name__ == '__main__':
     solution = Solution()
     root = TreeNode(3)
     root.left = TreeNode(1)
-    root.left.right = TreeNode(2)
-    root.left.right.right = TreeNode(4)
+    root.right = TreeNode(4)
+    root.right.left = TreeNode(2)
     solution.recoverTree(root)
 
 
